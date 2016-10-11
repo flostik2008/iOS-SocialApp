@@ -13,6 +13,10 @@
 		87AAE4701DAAF94D002E2BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87AAE46F1DAAF94D002E2BC4 /* Assets.xcassets */; };
 		87AAE4731DAAF94D002E2BC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87AAE4711DAAF94D002E2BC4 /* LaunchScreen.storyboard */; };
 		87AAE47B1DAAFB3F002E2BC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87AAE47A1DAAFB3F002E2BC4 /* GoogleService-Info.plist */; };
+		87AAE4801DAC3B7A002E2BC4 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE47F1DAC3B7A002E2BC4 /* LogInView.swift */; };
+		87AAE4831DAC3BD8002E2BC4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE4821DAC3BD8002E2BC4 /* Constants.swift */; };
+		87AAE4851DAC40C4002E2BC4 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE4841DAC40C4002E2BC4 /* Button.swift */; };
+		87AAE4871DAC4386002E2BC4 /* AnotherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE4861DAC4386002E2BC4 /* AnotherButton.swift */; };
 		E86C3B0230C206CEA5FF325B /* Pods_SocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC3C5F808EE2084A48976EB /* Pods_SocialApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		87AAE4721DAAF94D002E2BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87AAE4741DAAF94D002E2BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87AAE47A1DAAFB3F002E2BC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87AAE47F1DAC3B7A002E2BC4 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		87AAE4821DAC3BD8002E2BC4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		87AAE4841DAC40C4002E2BC4 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		87AAE4861DAC4386002E2BC4 /* AnotherButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherButton.swift; sourceTree = "<group>"; };
 		CBC3C5F808EE2084A48976EB /* Pods_SocialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,6 +80,7 @@
 		87AAE4671DAAF94D002E2BC4 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				87AAE4811DAC3BCA002E2BC4 /* Util */,
 				87AAE47E1DAB0115002E2BC4 /* Model */,
 				87AAE47D1DAB010C002E2BC4 /* View */,
 				87AAE47C1DAB00F1002E2BC4 /* Controller */,
@@ -96,6 +105,9 @@
 		87AAE47D1DAB010C002E2BC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				87AAE47F1DAC3B7A002E2BC4 /* LogInView.swift */,
+				87AAE4841DAC40C4002E2BC4 /* Button.swift */,
+				87AAE4861DAC4386002E2BC4 /* AnotherButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -105,6 +117,14 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		87AAE4811DAC3BCA002E2BC4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				87AAE4821DAC3BD8002E2BC4 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		C335B025F3E48A7DF9EBA239 /* Frameworks */ = {
@@ -240,8 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87AAE4851DAC40C4002E2BC4 /* Button.swift in Sources */,
+				87AAE4871DAC4386002E2BC4 /* AnotherButton.swift in Sources */,
+				87AAE4801DAC3B7A002E2BC4 /* LogInView.swift in Sources */,
 				87AAE46B1DAAF94D002E2BC4 /* SignInVC.swift in Sources */,
 				87AAE4691DAAF94D002E2BC4 /* AppDelegate.swift in Sources */,
+				87AAE4831DAC3BD8002E2BC4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
