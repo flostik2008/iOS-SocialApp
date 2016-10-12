@@ -73,12 +73,12 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBw-PH-2dX">
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.8687230603448276" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOQ-eB-zNi">
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.86872306030000002" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg3-d7-ful" customClass="AnotherButton" customModule="SocialApp" customModuleProvider="target">
                                         <color key="backgroundColor" red="0.83529411764705885" green="0.0" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
@@ -86,6 +86,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIB-kB-9jC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -109,6 +112,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ycA-DP-zQt" secondAttribute="trailing" constant="30" id="zRo-5L-uyP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="JBw-PH-2dX" id="2op-Vq-qDF"/>
+                        <outlet property="pwdField" destination="iOQ-eB-zNi" id="cRc-XP-YZ2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

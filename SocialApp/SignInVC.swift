@@ -11,13 +11,33 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var pwdField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+//        pwdField.delegate = self
+//        emailField.delegate = self
     }
 
+//    func dismissKeyboard() {
+//        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+//        view.endEditing(true)
+//    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
+        
+    }
+    
 
     @IBAction func facebookBtnTapped(_ sender: AnyObject) {
         
@@ -49,5 +69,29 @@ class SignInVC: UIViewController {
             }
         })
     }
+    @IBAction func signInTapped(_ sender: AnyObject) {
+        if let email = emailField.text, let pwd = pwdField.text {
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
+                if error == nil {
+                    print("Zhenya: Email user authenticated with Firebase")
+                } else {
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                        
+                        if error != nil {
+                            print("Zhenya: Unable to authenticate with Firbase using email")
+                        } else {
+                            print("Zhenya: Successfully authenticated with Firbase")
+                        }
+                    })
+                }
+            })
+        }
+    }
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        emailField.resignFirstResponder()
+//        pwdField.resignFirstResponder()
+//        return true
+//    }
 }
 
