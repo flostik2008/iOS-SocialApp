@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 
@@ -19,10 +20,21 @@ class SignInVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+
+        }
+
+    override func viewDidAppear(_ animated: Bool) {
+   
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            print("Zhenya: ID found in keychain")
+            
+        performSegue(withIdentifier: "FeedVC", sender: nil)
+    }
         
+        
+// Staff, to dismiss the keyboard:
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+//        view.addGestureRecognizer(tap)
 //        pwdField.delegate = self
 //        emailField.delegate = self
     }
@@ -32,11 +44,11 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 //        view.endEditing(true)
 //    }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        
-        
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//        
+//        
+//    }
     
 
     @IBAction func facebookBtnTapped(_ sender: AnyObject) {
@@ -66,6 +78,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 print("Zhenya: Unable to authenticate with Firebase - \(error)")
             } else {
                 print("Zhenya: Successfully auhenticated with Firebase.")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
     }
@@ -74,18 +89,42 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                     print("Zhenya: Email user authenticated with Firebase")
+                    if let user = user {
+                    self.completeSignIn(id: user.uid)
+                    }
                 } else {
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
+                    
+                    // FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error
+                    
+                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd) { (user, error) in
                         
+                        
+                        print ("Zhenya: Here it is: \(email) \(pwd)")
+                            
                         if error != nil {
                             print("Zhenya: Unable to authenticate with Firbase using email")
+                            print("Zhenya: \(error.debugDescription)")
+                            
                         } else {
                             print("Zhenya: Successfully authenticated with Firbase")
+                            if let user = user {
+                            self.completeSignIn(id: user.uid)
+                            }
                         }
-                    })
+                    }
                 }
             })
         }
+    }
+    
+    func completeSignIn(id: String) {
+        
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        
+        print("Zhenya: FUck \(id)")
+        print("Zhenya: Data saved to keychain \(keychainResult)")
+        
+        performSegue(withIdentifier: "FeedVC", sender: nil)
     }
     
 //    func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -93,5 +132,6 @@ class SignInVC: UIViewController, UITextFieldDelegate {
 //        pwdField.resignFirstResponder()
 //        return true
 //    }
+    
 }
 
