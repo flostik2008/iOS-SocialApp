@@ -79,7 +79,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             } else {
                 print("Zhenya: Successfully auhenticated with Firebase.")
                 if let user = user {
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
         })
@@ -90,7 +91,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 if error == nil {
                     print("Zhenya: Email user authenticated with Firebase")
                     if let user = user {
-                    self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     
@@ -108,7 +110,8 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                         } else {
                             print("Zhenya: Successfully authenticated with Firbase")
                             if let user = user {
-                            self.completeSignIn(id: user.uid)
+                            let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                             }
                         }
                     }
@@ -117,13 +120,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
-        
-        print("Zhenya: FUck \(id)")
         print("Zhenya: Data saved to keychain \(keychainResult)")
-        
         performSegue(withIdentifier: "FeedVC", sender: nil)
     }
     
