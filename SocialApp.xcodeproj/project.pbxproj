@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		872F65821DB2EA5A003D5224 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F65811DB2EA5A003D5224 /* CircleView.swift */; };
 		872F65841DB2F866003D5224 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F65831DB2F866003D5224 /* PostCell.swift */; };
+		877890251DB6CD50007636BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877890241DB6CD50007636BF /* Post.swift */; };
 		87AAE4691DAAF94D002E2BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE4681DAAF94D002E2BC4 /* AppDelegate.swift */; };
 		87AAE46B1DAAF94D002E2BC4 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE46A1DAAF94D002E2BC4 /* SignInVC.swift */; };
 		87AAE46E1DAAF94D002E2BC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87AAE46C1DAAF94D002E2BC4 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		3F0A0ADC7C30B86DABCC1296 /* Pods-SocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialApp/Pods-SocialApp.release.xcconfig"; sourceTree = "<group>"; };
 		872F65811DB2EA5A003D5224 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		872F65831DB2F866003D5224 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		877890241DB6CD50007636BF /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		87AAE4651DAAF94D002E2BC4 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AAE4681DAAF94D002E2BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87AAE46A1DAAF94D002E2BC4 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		87AAE47E1DAB0115002E2BC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				877890241DB6CD50007636BF /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				872F65821DB2EA5A003D5224 /* CircleView.swift in Sources */,
+				877890251DB6CD50007636BF /* Post.swift in Sources */,
 				87AAE4851DAC40C4002E2BC4 /* Button.swift in Sources */,
 				87AAE4891DAF0215002E2BC4 /* FeedVC.swift in Sources */,
 				87AAE4871DAC4386002E2BC4 /* AnotherButton.swift in Sources */,

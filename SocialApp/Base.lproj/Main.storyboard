@@ -166,12 +166,16 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cu6-8c-1a7">
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="a4a-Zb-wd0" customClass="CircleView" customModule="SocialApp" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="a4a-Zb-wd0" customClass="CircleView" customModule="SocialApp" customModuleProvider="target">
                                                 <color key="backgroundColor" red="0.10196078431372549" green="0.46274509803921571" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="Lbn-zu-u79"/>
                                                     <constraint firstAttribute="width" constant="56" id="RgQ-y5-5lZ"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="fPb-VM-9ej" appends="YES" id="TCe-tc-xNT"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-t8-Oq0">
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,7 +242,7 @@
                                                                         </imageView>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Q1P-pq-rXT"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1P-pq-rXT"/>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bWF-tZ-IP4">
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -314,6 +318,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImage" destination="a4a-Zb-wd0" id="W5S-aL-eCk"/>
                         <outlet property="tableView" destination="H0c-aW-ZOo" id="OaJ-Gz-HCb"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="GVJ-wL-oAT"/>
                     </connections>
@@ -322,6 +327,11 @@
                 <tapGestureRecognizer id="pjN-SY-Vbx">
                     <connections>
                         <action selector="signOutTapped:" destination="MoZ-Z9-XbS" id="z5E-Dn-wE0"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="fPb-VM-9ej">
+                    <connections>
+                        <action selector="addImageTapped:" destination="MoZ-Z9-XbS" id="foO-Hg-NXG"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -333,7 +343,6 @@
         <image name="add-post" width="88" height="88"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="f" width="352" height="328"/>
-        <image name="placeholder" width="567" height="312"/>
         <image name="profile" width="113" height="155"/>
         <image name="sign-out" width="92" height="65"/>
         <image name="transparent" width="504" height="360"/>
