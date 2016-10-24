@@ -178,7 +178,7 @@
                                                 </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a caption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NxG-t8-Oq0">
-                                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -189,6 +189,9 @@
                                                     <constraint firstAttribute="height" constant="56" id="rm7-9N-DLO"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postBtnTapped:" destination="MoZ-Z9-XbS" eventType="touchUpInside" id="hRE-mP-Eqz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -319,6 +322,7 @@
                     </view>
                     <connections>
                         <outlet property="addImage" destination="a4a-Zb-wd0" id="W5S-aL-eCk"/>
+                        <outlet property="captionField" destination="NxG-t8-Oq0" id="TDB-25-h96"/>
                         <outlet property="tableView" destination="H0c-aW-ZOo" id="OaJ-Gz-HCb"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="GVJ-wL-oAT"/>
                     </connections>
