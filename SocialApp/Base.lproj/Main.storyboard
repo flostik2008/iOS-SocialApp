@@ -295,6 +295,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="caption" destination="bWF-tZ-IP4" id="Lsp-aJ-y6T"/>
+                                            <outlet property="likeImg" destination="3pH-Fi-S4m" id="xtU-41-xhg"/>
                                             <outlet property="likesLbl" destination="0Cb-2a-n4H" id="hHh-rv-pk6"/>
                                             <outlet property="postImg" destination="Q1P-pq-rXT" id="qpU-tJ-VXH"/>
                                             <outlet property="profileImg" destination="kew-Vf-Z4O" id="a0Q-LJ-GBr"/>

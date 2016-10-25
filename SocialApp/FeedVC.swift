@@ -35,6 +35,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
      
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     print("SNAPS: \(snap)")
@@ -63,8 +65,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 return cell
             } else {
                 cell.configureCell(post: post)
-                return cell
             }
+            return cell
+            
         } else {
          return PostCell()
             }
@@ -157,6 +160,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imageSelected = false
         addImage.image = UIImage(named: "add-image")
         
+        
+        self.posts.reverse()
         tableView.reloadData()
     }
     

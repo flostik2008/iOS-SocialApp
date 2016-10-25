@@ -10,6 +10,7 @@
 		872F65821DB2EA5A003D5224 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F65811DB2EA5A003D5224 /* CircleView.swift */; };
 		872F65841DB2F866003D5224 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F65831DB2F866003D5224 /* PostCell.swift */; };
 		877890251DB6CD50007636BF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877890241DB6CD50007636BF /* Post.swift */; };
+		87A3F55A1DBDCC7800751026 /* Exercise.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87A3F5591DBDCC7800751026 /* Exercise.rtf */; };
 		87AAE4691DAAF94D002E2BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE4681DAAF94D002E2BC4 /* AppDelegate.swift */; };
 		87AAE46B1DAAF94D002E2BC4 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAE46A1DAAF94D002E2BC4 /* SignInVC.swift */; };
 		87AAE46E1DAAF94D002E2BC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87AAE46C1DAAF94D002E2BC4 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		872F65811DB2EA5A003D5224 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		872F65831DB2F866003D5224 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		877890241DB6CD50007636BF /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		87A3F5591DBDCC7800751026 /* Exercise.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Exercise.rtf; sourceTree = "<group>"; };
 		87AAE4651DAAF94D002E2BC4 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AAE4681DAAF94D002E2BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87AAE46A1DAAF94D002E2BC4 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 				87AAE4711DAAF94D002E2BC4 /* LaunchScreen.storyboard */,
 				87AAE4741DAAF94D002E2BC4 /* Info.plist */,
 				87AAE47A1DAAFB3F002E2BC4 /* GoogleService-Info.plist */,
+				87AAE48A1DAF047C002E2BC4 /* Logic.rtf */,
+				87A3F5591DBDCC7800751026 /* Exercise.rtf */,
 			);
 			path = SocialApp;
 			sourceTree = "<group>";
@@ -113,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				87AAE46A1DAAF94D002E2BC4 /* SignInVC.swift */,
-				87AAE48A1DAF047C002E2BC4 /* Logic.rtf */,
 				87AAE4881DAF0215002E2BC4 /* FeedVC.swift */,
 			);
 			name = Controller;
@@ -233,6 +236,7 @@
 			files = (
 				87AAE48B1DAF047C002E2BC4 /* Logic.rtf in Resources */,
 				87AAE4731DAAF94D002E2BC4 /* LaunchScreen.storyboard in Resources */,
+				87A3F55A1DBDCC7800751026 /* Exercise.rtf in Resources */,
 				87AAE47B1DAAFB3F002E2BC4 /* GoogleService-Info.plist in Resources */,
 				87AAE4701DAAF94D002E2BC4 /* Assets.xcassets in Resources */,
 				87AAE46E1DAAF94D002E2BC4 /* Main.storyboard in Resources */,
